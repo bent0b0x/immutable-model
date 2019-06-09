@@ -121,28 +121,4 @@ describe("ImmutableModel", () => {
       expect(updatedModel instanceof MyModel).toEqual(true);
     });
   });
-
-  describe("serialize", () => {
-    it("should serialize attributes and version correctly", () => {
-      const MyModel = ImmutableModel(
-        {
-          baz: "bar",
-          weeble: "deeble"
-        },
-        {
-          version: 2
-        }
-      );
-
-      const model = new MyModel();
-
-      expect(model.serializeForStorage()).toEqual({
-        attrs: {
-          baz: "bar",
-          weeble: "deeble"
-        },
-        version: 2
-      });
-    });
-  });
 });
