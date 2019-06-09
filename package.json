@@ -3,7 +3,8 @@
   "scripts": {
     "lint": "yarn eslint src/scripts --cache",
     "test:unit": "NODE_ENV=test jest",
-    "test:unit:watch": "yarn test:unit --watch"
+    "test:unit:watch": "yarn test:unit --watch",
+    "test": "jest"
   },
   "lint-staged": {
     "*.{js}": [
