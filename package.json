@@ -1,7 +1,7 @@
 {
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
-    "lint": "yarn eslint src/scripts --cache",
+    "lint": "yarn eslint src --cache",
     "test:unit": "jest",
     "test:unit:watch": "yarn test:unit --watch"
   },
