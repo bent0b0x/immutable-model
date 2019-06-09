@@ -2,7 +2,7 @@
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "lint": "yarn eslint src/scripts --cache",
-    "test:unit": "jest",
+    "test:unit": "NODE_ENV=test jest",
     "test:unit:watch": "yarn test:unit --watch"
   },
   "lint-staged": {
@@ -22,7 +22,11 @@
   },
   "dependencies": {},
   "devDependencies": {
+    "@babel/core": "^7.4.5",
     "babel-eslint": "^10.0.1",
+    "babel-jest": "^24.8.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
     "eslint": "^5.12.0",
     "eslint-config-prettier": "^3.5.0",
     "eslint-plugin-jest": "^22.1.3",
