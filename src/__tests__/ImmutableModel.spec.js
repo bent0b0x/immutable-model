@@ -1,8 +1,8 @@
-import BaseModel from "../BaseModel";
+import ImmutableModel from "../ImmutableModel";
 
-describe("BaseModel", () => {
+describe("ImmutableModel", () => {
   it("should create a class", () => {
-    const MyModel = BaseModel();
+    const MyModel = ImmutableModel();
 
     expect(typeof MyModel).toEqual("function");
     expect(() => {
@@ -15,7 +15,7 @@ describe("BaseModel", () => {
 
   describe("constructor", () => {
     it("should build a new object with the specified default attributes", () => {
-      const MyModel = BaseModel({
+      const MyModel = ImmutableModel({
         foo: "bar",
         baz: "foo"
       });
@@ -27,7 +27,7 @@ describe("BaseModel", () => {
     });
 
     it("should override default attributes when overrides are passed in", () => {
-      const MyModel = BaseModel({
+      const MyModel = ImmutableModel({
         foo: "bar",
         baz: "foo"
       });
@@ -41,7 +41,7 @@ describe("BaseModel", () => {
     });
 
     it("should prevent unknown keys from being set", () => {
-      const MyModel = BaseModel({
+      const MyModel = ImmutableModel({
         foo: "bar",
         baz: "foo"
       });
@@ -56,7 +56,7 @@ describe("BaseModel", () => {
   });
 
   describe("get", () => {
-    const MyModel = BaseModel({
+    const MyModel = ImmutableModel({
       foo: "bar",
       baz: "bee"
     });
@@ -77,7 +77,7 @@ describe("BaseModel", () => {
   });
 
   describe("set", () => {
-    const MyModel = BaseModel({
+    const MyModel = ImmutableModel({
       foo: "bar",
       baz: "bee"
     });
@@ -124,7 +124,7 @@ describe("BaseModel", () => {
 
   describe("serialize", () => {
     it("should serialize attributes and version correctly", () => {
-      const MyModel = BaseModel(
+      const MyModel = ImmutableModel(
         {
           baz: "bar",
           weeble: "deeble"

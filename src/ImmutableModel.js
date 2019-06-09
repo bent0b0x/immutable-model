@@ -1,4 +1,4 @@
-const BaseModel = (defaultAttrs = {}, { version = 1 } = {}) => {
+const ImmutableModel = (defaultAttrs = {}, { version = 1 } = {}) => {
   class Model {
     static version = version;
 
@@ -18,25 +18,6 @@ const BaseModel = (defaultAttrs = {}, { version = 1 } = {}) => {
       }
 
       Object.freeze(this._attrs);
-    }
-
-    _getAttrs = () => {
-      return this._attrs;
-    };
-
-    serializeForCreate = () => {
-      const attrs = { ...this._attrs };
-
-      delete attrs.id;
-
-      return attrs;
-    };
-
-    serializeForStorage() {
-      return {
-        version: this._version,
-        attrs: this._getAttrs()
-      };
     }
 
     isValidAttrKey = key => {
@@ -61,9 +42,13 @@ const BaseModel = (defaultAttrs = {}, { version = 1 } = {}) => {
         [key]: val
       });
     };
+
+    attrs = () => {
+      return this._attrs;
+    };
   }
 
   return Model;
 };
 
-export default BaseModel;
+export default ImmutableModel;
